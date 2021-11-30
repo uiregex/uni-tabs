@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"/>
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@uiwebkit/mat@2.0.0-1/dist/mat.esm.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@uiwebkit/udk@2.0.0-1/dist/udk.esm.js"></script>
+
+  <script type="module" src="/build/tabs.esm.js"></script>
+  <script nomodule src="/build/tabs.js"></script>
+</head>
+<body>
+<uni-tabs value='[{"label": "Store Tab 1"}, {"label": "Store Tab 2"}, {"label": "Store Tab 3"}]'>
+  <div>Content 1</div>
+
+  <div>Content 2</div>
+
+  <div>Content 3</div>
+</uni-tabs>
+
+<uni-tabs selected-index="1" value='[{"label": "Store Tab 1"}, {"label": "Store Tab 2"}, {"label": "Store Tab 3"}]'>
+  <div>Content 1</div>
+
+  <div>Content 2</div>
+
+  <div>Content 3</div>
+</uni-tabs>
+
+<uni-tabs
+  value='[{"label": "Tab 1", "param": "tab=1"}, {"label": "Tab 2", "param": "tab=2"}, {"label": "Tab 3", "param": "tab=3"}]'>
+  <div>Content 1</div>
+
+  <div>Content 2</div>
+
+  <div>Content 3</div>
+</uni-tabs>
+
+<uni-tabs selected-index="2"
+  value='[{"label": "Tab 1", "param": "tabsel=1"}, {"label": "Tab 2", "param": "tabsel=2"}, {"label": "Tab 3", "param": "tabsel=3"}]'>
+  <div>Content 1</div>
+
+  <div>Content 2</div>
+
+  <div>Content 3</div>
+</uni-tabs>
+
+
+<!--<uni-router></uni-router>-->
+
+<!--<uni-router-link activate params="tab=2"></uni-router-link>-->
+
+<!--<uni-tabs only>-->
+<!--  <uni-tab-bar>-->
+<!--        <uni-router-link params="tab=1">-->
+<!--          <uni-route params="tab=1" prop="active">-->
+<!--            <uni-tab>Tab 1</uni-tab>-->
+<!--          </uni-route>-->
+<!--        </uni-router-link>-->
+
+<!--        <uni-router-link params="tab=2">-->
+<!--          <uni-route params="tab=2" prop="active">-->
+<!--            <uni-tab>Tab 2</uni-tab>-->
+<!--          </uni-route>-->
+<!--        </uni-router-link>-->
+
+<!--        <uni-router-link params="tab=3">-->
+<!--          <uni-route params="tab=3" prop="active">-->
+<!--            <uni-tab>Tab 3</uni-tab>-->
+<!--          </uni-route>-->
+<!--        </uni-router-link>-->
+<!--  </uni-tab-bar>-->
+
+<!--    <uni-route-display params="tab=1">-->
+<!--      <div>Content 1</div>-->
+<!--    </uni-route-display>-->
+
+<!--    <uni-route-display params="tab=2">-->
+<!--      <div>Content 2</div>-->
+<!--    </uni-route-display>-->
+
+<!--    <uni-route-display params="tab=3">-->
+<!--      <div>Content 3</div>-->
+<!--    </uni-route-display>-->
+<!--</uni-tabs>-->
+
+<!--<uni-tabs only>-->
+<!--  <uni-tab-bar>-->
+<!--    <uni-repeat-->
+<!--      state='[{"label": "Tab 1", "param": "tab=1"}, {"label": "Tab 2", "param": "tab=2"}, {"label": "Tab 3", "param": "tab=3"}]'>-->
+<!--      <template>-->
+<!--        <uni-router-link params="{{ param }}">-->
+<!--          <uni-route params="{{ param }}" prop="active">-->
+<!--            <uni-tab>{{ label }}</uni-tab>-->
+<!--          </uni-route>-->
+<!--        </uni-router-link>-->
+<!--      </template>-->
+<!--    </uni-repeat>-->
+<!--  </uni-tab-bar>-->
+
+<!--  <uni-tabs-content value='[{"param": "tab=1"}, {"param": "tab=2"}, {"param": "tab=3"}]'>-->
+<!--    <div>Content 1</div>-->
+
+<!--    <div>Content 2</div>-->
+
+<!--    <div>Content 3</div>-->
+<!--  </uni-tabs-content>-->
+<!--</uni-tabs>-->
+
+<!--<uni-tabs only>-->
+<!--  <uni-tab-bar>-->
+<!--    <uni-load-repeat url="assets/json/route.json">-->
+<!--      <template>-->
+<!--        <uni-router-link params="{{ param }}">-->
+<!--          <uni-route params="{{ param }}" prop="active">-->
+<!--            <uni-tab>{{ label }}</uni-tab>-->
+<!--          </uni-route>-->
+<!--        </uni-router-link>-->
+<!--      </template>-->
+<!--    </uni-load-repeat>-->
+<!--  </uni-tab-bar>-->
+
+<!--  <uni-event-load url="assets/json/route.json" prop="value">-->
+<!--    <uni-tabs-content>-->
+<!--      <template>-->
+<!--        <div>Content 1</div>-->
+
+<!--        <div>Content 2</div>-->
+
+<!--        <div>Content 3</div>-->
+<!--      </template>-->
+<!--    </uni-tabs-content>-->
+<!--  </uni-event-load>-->
+<!--</uni-tabs>-->
+
+
+<!--<uni-store-set path="tab" state="1"></uni-store-set>-->
+
+<!--<uni-tabs only>-->
+<!--  <uni-tab-bar>-->
+<!--    <uni-event-store-set listen="click" path="tab" state="0">-->
+<!--      <uni-event-store-get path="tab" equal="0" prop="active">-->
+<!--        <uni-tab>Store Tab 1</uni-tab>-->
+<!--      </uni-event-store-get>-->
+<!--    </uni-event-store-set>-->
+
+<!--    <uni-event-store-set listen="click" path="tab" state="1">-->
+<!--      <uni-event-store-get path="tab" equal="1" prop="active">-->
+<!--        <uni-tab>Store Tab 2</uni-tab>-->
+<!--      </uni-event-store-get>-->
+<!--    </uni-event-store-set>-->
+
+<!--    <uni-event-store-set listen="click" path="tab" state="2">-->
+<!--      <uni-event-store-get path="tab" equal="2" prop="active">-->
+<!--        <uni-tab>Store Tab 3</uni-tab>-->
+<!--      </uni-event-store-get>-->
+<!--    </uni-event-store-set>-->
+<!--  </uni-tab-bar>-->
+
+<!--  <uni-event-load>-->
+<!--    <uni-tabs-content>-->
+<!--      <template>-->
+<!--        <div>Content 1</div>-->
+
+<!--        <div>Content 2</div>-->
+
+<!--        <div>Content 3</div>-->
+<!--      </template>-->
+<!--    </uni-tabs-content>-->
+<!--  </uni-event-load>-->
+<!--</uni-tabs>-->
+
+<!--<uni-tabs only>-->
+<!--  <uni-tab-bar>-->
+<!--    <uni-repeat state='[{"label": "Store Tab 1"}, {"label": "Store Tab 2"}, {"label": "Store Tab 3"}]'>-->
+<!--      <template>-->
+<!--        <uni-event-store-set listen="click" path="tab" state="{{ unindex }}">-->
+<!--          <uni-event-store-get path="tab" equal="{{ unindex }}" prop="active">-->
+<!--            <uni-tab>{{ label }}</uni-tab>-->
+<!--          </uni-event-store-get>-->
+<!--        </uni-event-store-set>-->
+<!--      </template>-->
+<!--    </uni-repeat>-->
+<!--  </uni-tab-bar>-->
+
+<!--  <uni-event-load>-->
+<!--    <uni-tabs-content>-->
+<!--      <template>-->
+<!--        <div>Content 1</div>-->
+
+<!--        <div>Content 2</div>-->
+
+<!--        <div>Content 3</div>-->
+<!--      </template>-->
+<!--    </uni-tabs-content>-->
+<!--  </uni-event-load>-->
+<!--</uni-tabs>-->
+
+<!--<uni-tabs only>-->
+<!--  <uni-tab-bar>-->
+<!--    <uni-load-repeat url="assets/json/store.json">-->
+<!--      <template>-->
+<!--        <uni-event-store-set listen="click" path="tab" state="{{ unindex }}">-->
+<!--          <uni-event-store-get path="tab" equal="{{ unindex }}" prop="active">-->
+<!--            <uni-tab>{{ label }}</uni-tab>-->
+<!--          </uni-event-store-get>-->
+<!--        </uni-event-store-set>-->
+<!--      </template>-->
+<!--    </uni-load-repeat>-->
+<!--  </uni-tab-bar>-->
+
+<!--  <uni-event-load>-->
+<!--    <uni-tabs-content>-->
+<!--      <template>-->
+<!--        <div>Content 1</div>-->
+
+<!--        <div>Content 2</div>-->
+
+<!--        <div>Content 3</div>-->
+<!--      </template>-->
+<!--    </uni-tabs-content>-->
+<!--  </uni-event-load>-->
+<!--</uni-tabs>-->
+</body>
+</html>

@@ -1,0 +1,14 @@
+[
+  {
+    "label": "Route Tab 1",
+    "param": "tab=1"
+  },
+  {
+    "label": "Route Tab 2",
+    "param": "tab=2"
+  },
+  {
+    "label": "Route Tab 3",
+    "param": "tab=3"
+  }
+]

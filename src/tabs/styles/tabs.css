@@ -1,0 +1,29 @@
+.uni-tabs .mdc-tab-bar uni-modify,
+.uni-tabs .mdc-tab-bar uni-event-store,
+.uni-tabs .mdc-tab-bar uni-event-store-set,
+.uni-tabs .mdc-tab-bar uni-router-link,
+.uni-tabs .mdc-tab-bar uni-load-repeat,
+.uni-tabs .mdc-tab-bar uni-load-repeat > uni-event,
+.uni-tabs .mdc-tab-bar uni-repeat,
+.uni-tabs .mdc-tab-bar uni-load {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  flex: 1 0 auto;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+
+.uni-tabs .mdc-tab-bar uni-event,
+.uni-tabs .mdc-tab-bar uni-store-set,
+.uni-tabs .mdc-tab-bar uni-store-get,
+.uni-tabs .mdc-tab-bar uni-event-store-get,
+.uni-tabs .mdc-tab-bar uni-route,
+.uni-tabs .mdc-tab-bar uni-replace,
+.uni-tabs .mdc-tab-bar uni-render,
+.uni-tabs .mdc-tab-bar uni-render uni-router-link {
+  display: flex;
+  width: 100%;
+}
+
