@@ -5,19 +5,44 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { UniTabValue } from "./tabs/models";
+import { UniCommonColor } from "@uiwebkit/common";
+import { UniStoreType, UniTabsValue } from "./tabs/models";
 export namespace Components {
     interface UniTabs {
-        "only": boolean;
+        "color": UniCommonColor;
+        "feature": string;
+        "frame": boolean;
+        "mini": boolean;
         "path": string;
         "pathId": string;
+        "pro": boolean;
         "selectedIndex": number;
-        "value": UniTabValue | string;
+        "shadow": boolean;
+        "stacked": boolean;
+        "top": boolean;
+        "type": UniStoreType;
+        "value": string | UniTabsValue;
     }
     interface UniTabsContent {
+        "feature": string;
+        "path": string;
+        "top": boolean;
+        "type": UniStoreType;
+        "value": string | UniTabsValue;
+    }
+    interface UniTabsShadow {
+        "color": UniCommonColor;
+        "feature": string;
+        "frame": boolean;
+        "mini": boolean;
         "path": string;
         "pathId": string;
-        "value": UniTabValue | string;
+        "pro": boolean;
+        "selectedIndex": number;
+        "stacked": boolean;
+        "top": boolean;
+        "type": UniStoreType;
+        "value": string | UniTabsValue;
     }
 }
 declare global {
@@ -33,27 +58,59 @@ declare global {
         prototype: HTMLUniTabsContentElement;
         new (): HTMLUniTabsContentElement;
     };
+    interface HTMLUniTabsShadowElement extends Components.UniTabsShadow, HTMLStencilElement {
+    }
+    var HTMLUniTabsShadowElement: {
+        prototype: HTMLUniTabsShadowElement;
+        new (): HTMLUniTabsShadowElement;
+    };
     interface HTMLElementTagNameMap {
         "uni-tabs": HTMLUniTabsElement;
         "uni-tabs-content": HTMLUniTabsContentElement;
+        "uni-tabs-shadow": HTMLUniTabsShadowElement;
     }
 }
 declare namespace LocalJSX {
     interface UniTabs {
-        "only"?: boolean;
+        "color"?: UniCommonColor;
+        "feature"?: string;
+        "frame"?: boolean;
+        "mini"?: boolean;
         "path"?: string;
         "pathId"?: string;
+        "pro"?: boolean;
         "selectedIndex"?: number;
-        "value"?: UniTabValue | string;
+        "shadow"?: boolean;
+        "stacked"?: boolean;
+        "top"?: boolean;
+        "type"?: UniStoreType;
+        "value"?: string | UniTabsValue;
     }
     interface UniTabsContent {
+        "feature"?: string;
+        "path"?: string;
+        "top"?: boolean;
+        "type"?: UniStoreType;
+        "value"?: string | UniTabsValue;
+    }
+    interface UniTabsShadow {
+        "color"?: UniCommonColor;
+        "feature"?: string;
+        "frame"?: boolean;
+        "mini"?: boolean;
         "path"?: string;
         "pathId"?: string;
-        "value"?: UniTabValue | string;
+        "pro"?: boolean;
+        "selectedIndex"?: number;
+        "stacked"?: boolean;
+        "top"?: boolean;
+        "type"?: UniStoreType;
+        "value"?: string | UniTabsValue;
     }
     interface IntrinsicElements {
         "uni-tabs": UniTabs;
         "uni-tabs-content": UniTabsContent;
+        "uni-tabs-shadow": UniTabsShadow;
     }
 }
 export { LocalJSX as JSX };
@@ -62,6 +119,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "uni-tabs": LocalJSX.UniTabs & JSXBase.HTMLAttributes<HTMLUniTabsElement>;
             "uni-tabs-content": LocalJSX.UniTabsContent & JSXBase.HTMLAttributes<HTMLUniTabsContentElement>;
+            "uni-tabs-shadow": LocalJSX.UniTabsShadow & JSXBase.HTMLAttributes<HTMLUniTabsShadowElement>;
         }
     }
 }

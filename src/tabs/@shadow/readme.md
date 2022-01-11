@@ -1,4 +1,4 @@
-# my-component
+# uni-tabs-shadow
 
 
 
@@ -25,8 +25,8 @@
 ### Graph
 ```mermaid
 graph TD;
-  uni-tabs --> uni-tabs-content
-  style uni-tabs fill:#f9f,stroke:#333,stroke-width:4px
+  uni-tabs-shadow --> uni-tabs-content
+  style uni-tabs-shadow fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

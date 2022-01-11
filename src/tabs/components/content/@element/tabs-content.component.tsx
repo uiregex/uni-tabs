@@ -1,55 +1,49 @@
 import {Component, Prop, ComponentInterface, Element} from '@stencil/core';
 
-import {isDefined, isJSON, isString} from "../../../utils/is";
-import {UniTabValue} from "../../../models";
+import {isDefined} from "@uiwebkit/common";
+
+import {UniStoreType, UniTabsValue} from "../../../models";
+import {parseValue} from "../../../utils/helpers";
 
 @Component({tag: 'uni-tabs-content'})
 export class UniTabsContentComponent implements ComponentInterface {
 
   @Element() el: HTMLElement;
 
-  @Prop({reflect: true}) value: UniTabValue | string = [];
+  @Prop({reflect: true}) value: string | UniTabsValue = [];
 
-  @Prop({reflect: true}) path: string = 'tab';
+  @Prop({reflect: true}) top: boolean = false;
 
-  @Prop({reflect: true}) pathId: string;
+  @Prop({reflect: true}) type: UniStoreType = 'memory';
 
-  private originalChildren: Element[];
+  @Prop({reflect: true}) feature: string = 'uni.store';
+
+  @Prop({reflect: true}) path: string;
 
   componentWillLoad(): Promise<void> | void {
-    const template = this.el.querySelector('template');
+    const value: UniTabsValue = parseValue(this.value);
+    const slotElements = this.el.querySelector('slot')?.assignedElements() || [];
+    const template = slotElements.length === 1 && slotElements[0]['tagName'] === 'UNI-TEMPLATE'
+      ? slotElements[0] as HTMLTemplateElement
+      : this.el.querySelector('uni-template');
+    const originalChildren = template ? Array.from(template.children) : [];
 
-    if (template) {
-      const documentFragment = template.content ? template.content.cloneNode(true) : template;
-      this.el.appendChild(documentFragment);
-      const templateChildren = Array.from(this.el.children);
-      templateChildren.shift();
-      this.originalChildren = templateChildren;
-    } else {
-      this.originalChildren = Array.from(this.el.children);
-    }
-  }
+    originalChildren.forEach((child: Element, index: number) => {
+      const isParam = isDefined(value[index]) && isDefined(value[index].param)
+      const wrapper = document.createElement(isParam ? 'uni-route-display' : 'uni-store-display');
+      wrapper.hidden = true;
 
-  componentDidRender(): void {
-    const value: UniTabValue = isString(this.value) && isJSON(this.value) ? JSON.parse(this.value) : [...this.value];
-    const path = `${this.path}.${this.pathId}`;
-
-    this.el.innerHTML = '';
-
-    this.originalChildren.forEach((child: Element, index: number) => {
-      const wrapper = document.createElement(
-        value.length > 0 && isDefined(value[index].param) ? 'uni-route-display' : 'uni-store-display'
-      );
-
-      if (value.length > 0 && isDefined(value[index]) && isDefined(value[index].param)) {
+      if (isParam) {
         wrapper.setAttribute('params', value[index].param);
       } else {
-        wrapper.setAttribute('path', path);
+        wrapper.setAttribute('top', `${this.top}`);
+        wrapper.setAttribute('type', this.type);
+        wrapper.setAttribute('feature', this.feature);
+        wrapper.setAttribute('path', this.path);
         wrapper.setAttribute('equal', '' + index);
       }
 
       wrapper.appendChild(child);
-
       this.el.appendChild(wrapper);
     });
   }

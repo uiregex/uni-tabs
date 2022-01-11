@@ -1,16 +1,17 @@
-import {Component, Prop, h, ComponentInterface, VNode, State, Watch} from '@stencil/core';
+import {Component, Prop, h, ComponentInterface, VNode, Watch, State} from '@stencil/core';
 
-import {UniCommonColor, UniHostTemplate} from "@uiwebkit/common";
+import {UniCommonColor, UniTemplate} from "@uiwebkit/common";
 
 import {UniStoreType, UniTabsValue} from "../models";
 import {UniTabsTemplate} from "../utils/tabs.template";
 import {getPathId, isParams, parseValue} from "../utils/helpers";
 
 @Component({
-  tag: 'uni-tabs',
-  styleUrl: '../styles/tabs.css'
+  tag: 'uni-tabs-shadow',
+  styleUrl: '../styles/tabs.css',
+  shadow: true
 })
-export class UniTabsComponent implements ComponentInterface {
+export class UniTabsShadowComponent implements ComponentInterface {
 
   @Prop({reflect: true}) pro: boolean = false;
 
@@ -27,8 +28,6 @@ export class UniTabsComponent implements ComponentInterface {
   @Prop({reflect: true}) top: boolean = false;
 
   @Prop({reflect: true}) frame: boolean = false;
-
-  @Prop({reflect: true}) shadow: boolean = false;
 
   @Prop({reflect: true}) type: UniStoreType = 'memory';
 
@@ -50,16 +49,19 @@ export class UniTabsComponent implements ComponentInterface {
   }
 
   render(): VNode {
-    const {pro, mini, stacked, color, selectedIndex, frame, shadow, top, type, feature, indexMode} = this;
+    const {pro, mini, stacked, color, selectedIndex, frame, top, type, feature, indexMode} = this;
     const value: UniTabsValue = parseValue(this.value);
     const isRouting = isParams(value);
     const path = `${this.path}.${this.pathId}`;
-    const classes = {'uni-tabs': true};
 
     const data = {pro, mini, stacked, color, value, isRouting, selectedIndex, indexMode};
-    const storeData = {top, frame, shadow, type, feature, path};
+    const storeData = {top, frame, shadow: true, type, feature, path};
 
-    return UniHostTemplate({classes}, value.length > 0 ? UniTabsTemplate(data, storeData, <slot/>) : null);
+    return UniTemplate(
+      <div class={'uni-tabs'}>
+        {value.length > 0 ? UniTabsTemplate(data, storeData, <slot/>) : <slot/>}
+      </div>
+    );
   }
 }
 

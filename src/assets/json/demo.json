@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Store Value",
+    "param": "demo=store-value"
+  },
+  {
+    "label": "Store Load",
+    "param": "demo=store-load"
+  },
+  {
+    "label": "Store Session",
+    "param": "demo=store-session"
+  },
+  {
+    "label": "Store Local",
+    "param": "demo=store-local"
+  },
+  {
+    "label": "Route Value",
+    "param": "demo=route-value"
+  },
+  {
+    "label": "Route Load",
+    "param": "demo=route-load"
+  }
+]

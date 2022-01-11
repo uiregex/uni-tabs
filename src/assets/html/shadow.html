@@ -1,0 +1,51 @@
+<uni-event-load url="assets/json/demo.json" prop="value">
+  <uni-tabs pro color="primary">
+    <uni-template hidden>
+      <uni-tabs-shadow selected-index="1" value='[{"label": "Tab 1"}, {"label": "Tab 2"}]'>
+        <uni-template hidden>
+          <div>Store Value 1</div>
+          <div>Store Value 2</div>
+        </uni-template>
+      </uni-tabs-shadow>
+
+      <uni-event-load url="assets/json/store.json" prop="value">
+        <uni-tabs-shadow selected-index="1">
+          <uni-template hidden>
+            <div>Store Load 1</div>
+            <div>Store Load 2</div>
+          </uni-template>
+        </uni-tabs-shadow>
+      </uni-event-load>
+
+      <uni-tabs-shadow selected-index="1" type="session" value='[{"label": "Tab 1"}, {"label": "Tab 2"}]'>
+        <uni-template hidden>
+          <div>Store Session 1</div>
+          <div>Store Session 2</div>
+        </uni-template>
+      </uni-tabs-shadow>
+
+      <uni-tabs-shadow selected-index="1" type="local" value='[{"label": "Tab 1"}, {"label": "Tab 2"}]'>
+        <uni-template hidden>
+          <div>Store Local 1</div>
+          <div>Store Local 2</div>
+        </uni-template>
+      </uni-tabs-shadow>
+
+      <uni-tabs-shadow value='[{"label": "Tab 1", "param": "tab=1"}, {"label": "Tab 2",  "param": "tab=2"}]'>
+        <uni-template hidden>
+          <div>Route Value 1</div>
+          <div>Route Value 2</div>
+        </uni-template>
+      </uni-tabs-shadow>
+
+      <uni-event-load url="assets/json/route.json" prop="value">
+        <uni-tabs-shadow>
+          <uni-template hidden>
+            <div>Route Load 1</div>
+            <div>Route Load 2</div>
+          </uni-template>
+        </uni-tabs-shadow>
+      </uni-event-load>
+    </uni-template>
+  </uni-tabs>
+</uni-event-load>

@@ -39,7 +39,7 @@ export const config: Config = {
       empty: true,
     },
     {
-      type: 'dist-custom-elements-bundle',
+      type: 'dist-custom-elements',
       empty: true,
     },
     {

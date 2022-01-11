@@ -1,0 +1,141 @@
+<uni-router shadow></uni-router>
+<uni-store-set path="tab.uni-1" state="1"></uni-store-set>
+<uni-store-set path="tab.uni-2" state="1"></uni-store-set>
+
+<uni-event-load url="assets/json/demo.json" prop="value">
+  <uni-tabs pro color="primary">
+    <uni-template hidden>
+      <uni-tabs>
+        <uni-tab-bar>
+          <uni-event-store-set listen="click" path="tab.uni-1" state="0">
+            <uni-event-store-get path="tab.uni-1" equal="0" prop="active">
+              <uni-tab>Tab 1</uni-tab>
+            </uni-event-store-get>
+          </uni-event-store-set>
+
+          <uni-event-store-set listen="click" path="tab.uni-1" state="1">
+            <uni-event-store-get path="tab.uni-1" equal="1" prop="active">
+              <uni-tab>Tab 2</uni-tab>
+            </uni-event-store-get>
+          </uni-event-store-set>
+        </uni-tab-bar>
+
+        <uni-store-display path="tab.uni-1" equal="0">
+          Store Value 1
+        </uni-store-display>
+
+        <uni-store-display path="tab.uni-1" equal="1">
+          Store Value 2
+        </uni-store-display>
+      </uni-tabs>
+
+      <uni-tabs>
+        <uni-tab-bar>
+          <uni-load-repeat url="assets/json/store.json">
+            <template>
+              <uni-event-store-set listen="click" path="tab.uni-2" state="(( unindex ))">
+                <uni-event-store-get path="tab.uni-2" equal="(( unindex ))" prop="active">
+                  <uni-tab>(( label ))</uni-tab>
+                </uni-event-store-get>
+              </uni-event-store-set>
+            </template>
+          </uni-load-repeat>
+        </uni-tab-bar>
+
+        <uni-tabs-content path="tab.uni-2">
+          <uni-template hidden>
+            <div>Store Load 1</div>
+            <div>Store Load 2</div>
+          </uni-template>
+        </uni-tabs-content>
+      </uni-tabs>
+
+      <uni-tabs>
+        <uni-tab-bar>
+          <uni-load-repeat url="assets/json/store.json">
+            <template>
+              <uni-event-store-set listen="click" type="session" path="tab.uni" state="(( unindex ))">
+                <uni-event-store-get type="session" path="tab.uni" equal="(( unindex ))" prop="active">
+                  <uni-tab>(( label ))</uni-tab>
+                </uni-event-store-get>
+              </uni-event-store-set>
+            </template>
+          </uni-load-repeat>
+        </uni-tab-bar>
+
+        <uni-tabs-content type="session" path="tab.uni">
+          <uni-template hidden>
+            <div>Store Session 1</div>
+            <div>Store Session 2</div>
+          </uni-template>
+        </uni-tabs-content>
+      </uni-tabs>
+
+      <uni-tabs>
+        <uni-tab-bar>
+          <uni-load-repeat url="assets/json/store.json">
+            <template>
+              <uni-event-store-set listen="click" type="local" path="tab.uni" state="(( unindex ))">
+                <uni-event-store-get type="local" path="tab.uni" equal="(( unindex ))" prop="active">
+                  <uni-tab>(( label ))</uni-tab>
+                </uni-event-store-get>
+              </uni-event-store-set>
+            </template>
+          </uni-load-repeat>
+        </uni-tab-bar>
+
+        <uni-tabs-content type="local" path="tab.uni">
+          <uni-template hidden>
+            <div>Store Local 1</div>
+            <div>Store Local 2</div>
+          </uni-template>
+        </uni-tabs-content>
+      </uni-tabs>
+
+      <uni-tabs>
+        <uni-tab-bar>
+          <uni-router-link params="tab=1">
+            <uni-route params="tab=1" prop="active">
+              <uni-tab>Tab 1</uni-tab>
+            </uni-route>
+          </uni-router-link>
+
+          <uni-router-link params="tab=2">
+            <uni-route params="tab=2" prop="active">
+              <uni-tab>Tab 2</uni-tab>
+            </uni-route>
+          </uni-router-link>
+        </uni-tab-bar>
+
+        <uni-route-display params="tab=1">
+          <div>Route Value 1</div>
+        </uni-route-display>
+
+        <uni-route-display params="tab=2">
+          <div>Route Value 2</div>
+        </uni-route-display>
+      </uni-tabs>
+
+      <uni-tabs>
+        <uni-tab-bar>
+          <uni-load-repeat url="assets/json/route.json">
+            <template>
+              <uni-router-link params="(( param ))">
+                <uni-route params="(( param ))" prop="active">
+                  <uni-tab>(( label ))</uni-tab>
+                </uni-route>
+              </uni-router-link>
+            </template>
+          </uni-load-repeat>
+        </uni-tab-bar>
+
+        <uni-tabs-content value='[{"param": "tab=1"}, {"param": "tab=2"}]'>
+          <uni-template hidden>
+            <div>Route Load 1</div>
+            <div>Route Load 2</div>
+          </uni-template>
+        </uni-tabs-content>
+      </uni-tabs>
+    </uni-template>
+  </uni-tabs>
+</uni-event-load>

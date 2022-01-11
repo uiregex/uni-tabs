@@ -1,0 +1,14 @@
+[
+  {
+    "label": "Custom Element",
+    "param": "type=element"
+  },
+  {
+    "label": "Web Component",
+    "param": "type=shadow"
+  },
+  {
+    "label": "Unpacked",
+    "param": "type=custom"
+  }
+]

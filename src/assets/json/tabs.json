@@ -1,0 +1,22 @@
+[
+  {
+    "icon": "favorite",
+    "iconType": "two-tone",
+    "angle": 270,
+    "label": "Tab 1",
+    "param": "tab=1"
+  },
+  {
+    "icon": "bootstrap-fill",
+    "icons": "bi",
+    "label": "Tab 2",
+    "param": "tab=2"
+  },
+  {
+    "icon": "font-awesome",
+    "icons": "fa",
+    "iconType": "brands",
+    "label": "Tab 3",
+    "param": "tab=3"
+  }
+]

@@ -1,11 +1,10 @@
 [
   {
-    "label": "Store Tab 1"
+    "icon" : "add",
+    "label": "Tab 1"
   },
   {
-    "label": "Store Tab 2"
-  },
-  {
-    "label": "Store Tab 3"
+    "icon" : "favorite",
+    "label": "Tab 2"
   }
 ]
