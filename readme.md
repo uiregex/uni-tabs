@@ -7,7 +7,7 @@ Uni Tabs is a set of Web Components & Custom Elements for adding webpage tabs an
 Uni Tabs components have three modes:
 1. Custom Element - `100%` convenience;
 2. Web Component - `100%` security;
-3. Custom Element with 'only' prop - `100%` customization;
+3. Unpacked - `100%` customization;
 
 Uni Tabs takes TypeScript, JSX, a tiny virtual DOM layer, efficient one-way data binding, an asynchronous rendering pipeline (similar to React Fiber), and lazy-loading out of the box, and generates 100% standards-based Web Components & Custom Elements that run in any browser supporting the Custom Elements v1 spec.
 
@@ -35,7 +35,7 @@ To build the component for production, run:
 npm run build:prod
 ```
 
-Check out our docs [here](https://uiwebkit.com/wgt/tabs/1).
+Check out our docs [here](https://uiwebkit.com/wgt/tabs/1/).
 
 
 ## Naming Components
@@ -50,11 +50,9 @@ There are two strategies we recommend for using Uni Tabs:
 ### Script tag
 
 - Put a script tag `<script type="module" src="https://cdn.jsdelivr.net/npm/@uiwebkit/tabs@latest/dist/tabs/tabs.esm.js"></script>` in the head of your index.html
-- To support old browsers, also put a script tag `<script nomodule src="https://cdn.jsdelivr.net/npm/@uiwebkit/tabs@latest/dist/tabs/tabs.js"></script>` in the head of your index.html
 - Then you can use the element anywhere in your template, JSX, html etc
 
 ### Node Modules
 - Run `npm i @uiwebkit/tabs --save`
-- Put a script tag similar to this `<script type="module" src="node_modules/@uiwebkit/tabs/dist/tabs/tabs.esm.js"></script>` in the head of your index.html
-- To support old browsers, also put a script tag `<script nomodule src="node_modules/@uiwebkit/tabs/dist/tabs/tabs.js"></script>` in the head of your index.html
+- Paste import '@uiwebkit/tabs'; into the main JS/TS file;
 - Then you can use the element anywhere in your template, JSX, html etc

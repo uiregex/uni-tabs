@@ -1,6 +1,6 @@
 {
   "name": "@uiwebkit/tabs",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "license": "MIT",
   "description": "Uni Tabs",
   "author": "Vitali Havryliuk",
@@ -8,7 +8,7 @@
   "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",
   "es2017": "dist/esm/index.mjs",
-  "types": "dist/types/components.d.ts",
+  "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/tabs/tabs.esm.js",
@@ -27,7 +27,7 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "pack": "npm pack",
-    "publish": "npm publish uiwebkit-tabs-0.0.1.tgz --access public"
+    "publish": "npm publish uiwebkit-tabs-1.0.0.tgz --access public"
   },
   "dependencies": {
     "@stencil/core": "2.12.1",
