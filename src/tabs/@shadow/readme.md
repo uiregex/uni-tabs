@@ -7,13 +7,20 @@
 
 ## Properties
 
-| Property        | Attribute        | Description | Type                              | Default     |
-| --------------- | ---------------- | ----------- | --------------------------------- | ----------- |
-| `only`          | `only`           |             | `boolean`                         | `false`     |
-| `path`          | `path`           |             | `string`                          | `'tab'`     |
-| `pathId`        | `path-id`        |             | `string`                          | `undefined` |
-| `selectedIndex` | `selected-index` |             | `number`                          | `undefined` |
-| `value`         | `value`          |             | `Partial<UniTabData>[] \| string` | `[]`        |
+| Property        | Attribute        | Description | Type                                           | Default       |
+| --------------- | ---------------- | ----------- | ---------------------------------------------- | ------------- |
+| `color`         | `color`          |             | `"accent" \| "primary" \| "success" \| "warn"` | `undefined`   |
+| `feature`       | `feature`        |             | `string`                                       | `'uni.store'` |
+| `frame`         | `frame`          |             | `boolean`                                      | `false`       |
+| `mini`          | `mini`           |             | `boolean`                                      | `false`       |
+| `path`          | `path`           |             | `string`                                       | `'tab'`       |
+| `pathId`        | `path-id`        |             | `string`                                       | `undefined`   |
+| `pro`           | `pro`            |             | `boolean`                                      | `false`       |
+| `selectedIndex` | `selected-index` |             | `number`                                       | `0`           |
+| `stacked`       | `stacked`        |             | `boolean`                                      | `false`       |
+| `top`           | `top`            |             | `boolean`                                      | `false`       |
+| `type`          | `type`           |             | `"local" \| "memory" \| "session"`             | `'memory'`    |
+| `value`         | `value`          |             | `Partial<UniTabData>[] \| string`              | `[]`          |
 
 
 ## Dependencies

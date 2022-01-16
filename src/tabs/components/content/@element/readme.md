@@ -7,11 +7,13 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                              | Default     |
-| -------- | --------- | ----------- | --------------------------------- | ----------- |
-| `path`   | `path`    |             | `string`                          | `'tab'`     |
-| `pathId` | `path-id` |             | `string`                          | `undefined` |
-| `value`  | `value`   |             | `Partial<UniTabData>[] \| string` | `[]`        |
+| Property  | Attribute | Description | Type                               | Default       |
+| --------- | --------- | ----------- | ---------------------------------- | ------------- |
+| `feature` | `feature` |             | `string`                           | `'uni.store'` |
+| `path`    | `path`    |             | `string`                           | `undefined`   |
+| `top`     | `top`     |             | `boolean`                          | `false`       |
+| `type`    | `type`    |             | `"local" \| "memory" \| "session"` | `'memory'`    |
+| `value`   | `value`   |             | `Partial<UniTabData>[] \| string`  | `[]`          |
 
 
 ## Dependencies

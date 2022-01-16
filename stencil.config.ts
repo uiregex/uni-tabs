@@ -2,7 +2,6 @@ import { Config } from '@stencil/core';
 
 export const config: Config = {
   namespace: 'tabs',
-  buildEs5: 'prod',
   enableCache: false,
   taskQueue: 'async',
   extras: {

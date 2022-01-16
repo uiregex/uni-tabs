@@ -5,10 +5,10 @@
   "description": "Uni Tabs",
   "author": "Vitali Havryliuk",
   "main": "dist/index.cjs.js",
-  "module": "dist/custom-elements/index.js",
+  "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",
   "es2017": "dist/esm/index.mjs",
-  "types": "dist/custom-elements/index.d.ts",
+  "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/tabs/tabs.esm.js",
@@ -30,8 +30,8 @@
     "publish": "npm publish uiwebkit-tabs-0.0.1.tgz --access public"
   },
   "dependencies": {
-    "@stencil/core": "2.12.0",
-    "@uiwebkit/common": "0.1.0"
+    "@stencil/core": "2.12.1",
+    "@uiwebkit/common": "0.1.1"
   },
   "devDependencies": {
     "@types/jest": "26.0.24",
