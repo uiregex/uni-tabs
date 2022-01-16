@@ -14,9 +14,19 @@
           </uni-event-store-set>
 
           <uni-event-store-set listen="click" path="tab.uni-1" state="1">
-            <uni-event-store-get path="tab.uni-1" equal="1" prop="active">
-              <uni-tab>Tab 2</uni-tab>
-            </uni-event-store-get>
+            <uni-tab only>
+              <uni-tab-content>
+                <uni-tab-icon type="two-tone" name="favorite" angle="270"></uni-tab-icon>
+
+                <uni-tab-text-label>Tab 2</uni-tab-text-label>
+
+                <uni-event-store-get path="tab.uni-1" equal="1" prop="active">
+                  <uni-tab-indicator></uni-tab-indicator>
+                </uni-event-store-get>
+              </uni-tab-content>
+
+              <uni-tab-ripple></uni-tab-ripple>
+            </uni-tab>
           </uni-event-store-set>
         </uni-tab-bar>
 
