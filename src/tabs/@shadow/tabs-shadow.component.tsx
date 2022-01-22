@@ -4,7 +4,7 @@ import {UniCommonColor, UniTemplate} from "@uiwebkit/common";
 
 import {UniStoreType, UniTabsValue} from "../models";
 import {UniTabsTemplate} from "../utils/tabs.template";
-import {getPathId, isParams, parseValue} from "../utils/helpers";
+import {getPathId, parseValue} from "../utils/helpers";
 
 @Component({
   tag: 'uni-tabs-shadow',
@@ -51,10 +51,9 @@ export class UniTabsShadowComponent implements ComponentInterface {
   render(): VNode {
     const {pro, mini, stacked, color, selectedIndex, frame, top, type, feature, indexMode} = this;
     const value: UniTabsValue = parseValue(this.value);
-    const isRouting = isParams(value);
     const path = `${this.path}.${this.pathId}`;
 
-    const data = {pro, mini, stacked, color, value, isRouting, selectedIndex, indexMode};
+    const data = {pro, mini, stacked, color, value, selectedIndex, indexMode};
     const storeData = {top, frame, shadow: true, type, feature, path};
 
     return UniTemplate(

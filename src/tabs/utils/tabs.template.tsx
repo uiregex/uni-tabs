@@ -3,30 +3,30 @@ import {Fragment, h, VNode} from "@stencil/core";
 import {isDefined, UniTemplate} from "@uiwebkit/common";
 
 export const UniTabsTemplate = function (data, storeData, template): VNode {
-  const {pro, mini, stacked, color, value, isRouting, selectedIndex, indexMode} = data;
+  const {pro, mini, stacked, color, value, selectedIndex, indexMode} = data;
   const {top, frame, shadow, type, feature, path} = storeData;
 
   return UniTemplate(
     <Fragment>
-      {isRouting ? <uni-router frame={frame} shadow={shadow}/> : null}
+      <uni-store-set
+        top={top}
+        frame={frame}
+        shadow={shadow}
+        mode={indexMode}
+        type={type}
+        feature={feature}
+        path={path}
+        state={selectedIndex}
+      />
 
-      {isDefined(selectedIndex) ? (
-        <uni-store-set
-          top={top}
-          frame={frame}
-          shadow={shadow}
-          mode={indexMode}
-          type={type}
-          feature={feature}
-          path={path}
-          state={selectedIndex}
-        />
-      ) : null}
+      {value[0]?.param ? (
+        <Fragment>
+          <uni-router frame={frame} shadow={shadow}/>
 
-      {isDefined(selectedIndex) && value[0]?.param ? (
-        <uni-route no-params={value[0].param.split('=')[0]} prop="activate">
-          <uni-router-link params={value[selectedIndex].param}/>
-        </uni-route>
+          <uni-route no-params={value[0].param.split('=')[0]} prop="activate">
+            <uni-router-link params={value[selectedIndex].param}/>
+          </uni-route>
+        </Fragment>
       ) : null}
 
       <uni-tab-bar pro={pro} color={color}>

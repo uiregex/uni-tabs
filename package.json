@@ -1,6 +1,6 @@
 {
   "name": "@uiwebkit/tabs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "description": "Uni Tabs",
   "author": "Vitali Havryliuk",
@@ -27,7 +27,7 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "pack": "npm pack",
-    "publish": "npm publish uiwebkit-tabs-1.0.0.tgz --access public"
+    "publish": "npm publish uiwebkit-tabs-1.0.1.tgz --access public"
   },
   "dependencies": {
     "@stencil/core": "2.12.1",

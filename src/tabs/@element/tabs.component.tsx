@@ -4,7 +4,7 @@ import {UniCommonColor, UniHostTemplate} from "@uiwebkit/common";
 
 import {UniStoreType, UniTabsValue} from "../models";
 import {UniTabsTemplate} from "../utils/tabs.template";
-import {getPathId, isParams, parseValue} from "../utils/helpers";
+import {getPathId, parseValue} from "../utils/helpers";
 
 @Component({
   tag: 'uni-tabs',
@@ -52,11 +52,10 @@ export class UniTabsComponent implements ComponentInterface {
   render(): VNode {
     const {pro, mini, stacked, color, selectedIndex, frame, shadow, top, type, feature, indexMode} = this;
     const value: UniTabsValue = parseValue(this.value);
-    const isRouting = isParams(value);
     const path = `${this.path}.${this.pathId}`;
     const classes = {'uni-tabs': true};
 
-    const data = {pro, mini, stacked, color, value, isRouting, selectedIndex, indexMode};
+    const data = {pro, mini, stacked, color, value, selectedIndex, indexMode};
     const storeData = {top, frame, shadow, type, feature, path};
 
     return UniHostTemplate({classes}, value.length > 0 ? UniTabsTemplate(data, storeData, <slot/>) : null);

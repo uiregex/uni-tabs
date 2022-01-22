@@ -1,4 +1,4 @@
-import {isDefined, isJSON, isString} from "@uiwebkit/common";
+import {isJSON, isString} from "@uiwebkit/common";
 
 import {UniStoreType, UniTabsValue} from "../models";
 
@@ -8,8 +8,4 @@ export function getPathId(type: UniStoreType): string {
 
 export function parseValue(value: string | UniTabsValue): UniTabsValue {
   return isString(value) && isJSON(value) ? JSON.parse(value) : [...value];
-}
-
-export function isParams(value: UniTabsValue): boolean {
-  return value.length > 0 && isDefined(value[0].param);
 }
