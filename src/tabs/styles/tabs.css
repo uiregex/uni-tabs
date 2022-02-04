@@ -27,9 +27,9 @@
   width: 100%;
 }
 
-.uni-tabs uni-router-link,
-.uni-tabs uni-event-store-set {
-  flex: 1 0 auto;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
+/*.uni-tabs uni-router-link,*/
+/*.uni-tabs uni-event-store-set {*/
+/*  flex: 1 0 auto;*/
+/*  -ms-flex-pack: center;*/
+/*  justify-content: center;*/
+/*}*/
