@@ -1,10 +1,10 @@
-import {Fragment, h, VNode} from "@stencil/core";
+import { Fragment, h, VNode } from '@stencil/core';
 
-import {isDefined, UniTemplate} from "@uiwebkit/common";
+import { isDefined, UniTemplate } from '@uiwebkit/common';
 
-export const UniTabsTemplate = function (data, storeData, template): VNode {
-  const {pro, mini, stacked, color, value, selectedIndex, indexMode} = data;
-  const {top, frame, shadow, type, feature, path} = storeData;
+export const UniTabsTemplate = function(data, storeData, template): VNode {
+  const { pro, mini, stacked, color, value, selectedIndex, indexMode } = data;
+  const { top, frame, shadow, type, feature, path } = storeData;
 
   return UniTemplate(
     <Fragment>
@@ -21,10 +21,10 @@ export const UniTabsTemplate = function (data, storeData, template): VNode {
 
       {value[0]?.param ? (
         <Fragment>
-          <uni-router frame={frame} shadow={shadow}/>
+          <uni-router frame={frame} shadow={shadow} />
 
-          <uni-route no-params={value[0].param.split('=')[0]} prop="activate">
-            <uni-router-link params={value[selectedIndex].param}/>
+          <uni-route no-params={value[0].param.split('=')[0]} prop='activate'>
+            <uni-router-link params={value[selectedIndex].param} />
           </uni-route>
         </Fragment>
       ) : null}
@@ -33,7 +33,7 @@ export const UniTabsTemplate = function (data, storeData, template): VNode {
         {value.map((item, index) => isDefined(item.param)
           ? (
             <uni-router-link params={item.param}>
-              <uni-route params={item.param} prop="active">
+              <uni-route params={item.param} prop='active'>
                 <uni-tab
                   mini={mini}
                   stacked={stacked}
@@ -47,7 +47,7 @@ export const UniTabsTemplate = function (data, storeData, template): VNode {
             </uni-router-link>
           ) : (
             <uni-event-store-set
-              listen="click"
+              listen='click'
               top={top}
               type={type}
               feature={feature}
@@ -62,7 +62,7 @@ export const UniTabsTemplate = function (data, storeData, template): VNode {
                 feature={feature}
                 path={path}
                 equal={index}
-                prop="active"
+                prop='active'
               >
                 <uni-tab
                   mini={mini}
@@ -75,7 +75,7 @@ export const UniTabsTemplate = function (data, storeData, template): VNode {
                 />
               </uni-event-store-get>
             </uni-event-store-set>
-          )
+          ),
         )}
       </uni-tab-bar>
 
@@ -88,6 +88,6 @@ export const UniTabsTemplate = function (data, storeData, template): VNode {
       >
         {template}
       </uni-tabs-content>
-    </Fragment>
+    </Fragment>,
   );
-}
+};

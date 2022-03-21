@@ -1,24 +1,24 @@
-import {Component, Prop, ComponentInterface, Element} from '@stencil/core';
+import { Component, Prop, ComponentInterface, Element } from '@stencil/core';
 
-import {isDefined} from "@uiwebkit/common";
+import { isDefined } from '@uiwebkit/common';
 
-import {UniStoreType, UniTabsValue} from "../../../models";
-import {parseValue} from "../../../utils/helpers";
+import { UniStoreType, UniTabsValue } from '../../../models';
+import { parseValue } from '../../../utils/helpers';
 
-@Component({tag: 'uni-tabs-content'})
+@Component({ tag: 'uni-tabs-content' })
 export class UniTabsContentComponent implements ComponentInterface {
 
   @Element() el: HTMLElement;
 
-  @Prop({reflect: true}) value: string | UniTabsValue = [];
+  @Prop({ reflect: true }) value: string | UniTabsValue = [];
 
-  @Prop({reflect: true}) top: boolean = false;
+  @Prop({ reflect: true }) top: boolean = false;
 
-  @Prop({reflect: true}) type: UniStoreType = 'memory';
+  @Prop({ reflect: true }) type: UniStoreType = 'memory';
 
-  @Prop({reflect: true}) feature: string = 'uni.store';
+  @Prop({ reflect: true }) feature: string = 'uni.store';
 
-  @Prop({reflect: true}) path: string;
+  @Prop({ reflect: true }) path: string;
 
   componentWillLoad(): Promise<void> | void {
     const value: UniTabsValue = parseValue(this.value);
@@ -29,7 +29,7 @@ export class UniTabsContentComponent implements ComponentInterface {
     const originalChildren = template ? Array.from(template.children) : [];
 
     originalChildren.forEach((child: Element, index: number) => {
-      const isParam = isDefined(value[index]) && isDefined(value[index].param)
+      const isParam = isDefined(value[index]) && isDefined(value[index].param);
       const wrapper = document.createElement(isParam ? 'uni-route-display' : 'uni-store-display');
       wrapper.hidden = true;
 

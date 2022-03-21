@@ -1,6 +1,6 @@
-import {isJSON, isString} from "@uiwebkit/common";
+import { isJSON, isString } from '@uiwebkit/common';
 
-import {UniStoreType, UniTabsValue} from "../models";
+import { UniStoreType, UniTabsValue } from '../models';
 
 export function getPathId(type: UniStoreType): string {
   return type === 'memory' ? 'uni-' + Math.random().toString(9).substring(15) : 'uni';
